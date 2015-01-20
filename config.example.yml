@@ -1,0 +1,4 @@
+---
+  host: 'https://canvas-lms.example.com'
+  admin_token: 'admin_token_goes_here'
+  users_csv: 'all_users.csv'
