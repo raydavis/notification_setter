@@ -10,12 +10,8 @@ The first time you use this script, you will need to install required gems using
 
 	$ bundle install
 
-Most user accounts are setup to login to Canvas via an authentication method such as SAML, LDAP or CAS. This script uses
-a plain-text login supported by Canvas which can be added to the user account that you will be used to authenticate.
-
-This plain-text login is added to your account by searching for your user, viewing the user profile page (/accounts/:account_id/users/:user_id), and then under the 'Login Information' form using the 'Add Login' link to establish a unique login ID and password. The use of an email address is recommended as the 'Login' value for this form.
-
-After you've configured this plain-text username/password, open the config.example.yml file and save it as config.yml. Next edit the 'auth_user' and 'auth_pass' values to reflect the login and password for your Canvas-LMS user account that has Account Admin privileges.
+Next you will need to copy the contents of config.example.yml into a new file named config.yml. To properly authenticate with the
+Canvas LMS system you are using this script with, you'll need to [generate an API access token](https://guides.instructure.com/m/4214/l/40399-how-do-i-obtain-an-api-access-token) for your user account and then insert that token into the 'config.yml' file as the 'admin_token'.
 
 ## Providing CSV Report
 
@@ -31,7 +27,7 @@ in the first row (header row). Once this file is placed in the 'reports' folder,
 
 Because the Canvas API for Notification Preferences is limited to only update the current [user](https://canvas.instructure.com/doc/api/notification_preferences.html#method.notification_preferences.update) (self), this tool must use an option to [masquerade as another user](https://canvas.instructure.com/doc/api/file.masquerading.html) when performing the update.
 
-For this tool to work properly, you must use an admin_token in your config.yml for a user that has the "Become other users" permission.
+For this tool to work properly, you must use an admin_token in your config.yml for a user that has the "Become other users" permission, likely an Account Admin user.
 
 ## Run the primary script
 
