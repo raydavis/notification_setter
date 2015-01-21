@@ -25,7 +25,7 @@ class NotificationSetter
           'frequency' => 'immediately'
         }
       },
-      headers: @headers
+      :headers => @headers
     }
     conversation_created_request_path = "#{@host}/api/v1/users/self/communication_channels/email/#{email}/notification_preferences/conversation_created?as_user_id=sis_login_id:#{uid}"
     announcement_created_by_you_request_path = "#{@host}/api/v1/users/self/communication_channels/email/#{email}/notification_preferences/announcement_created_by_you?as_user_id=sis_login_id:#{uid}"
