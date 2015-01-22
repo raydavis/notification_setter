@@ -10,7 +10,13 @@ The first time you use this script, you will need to install required gems using
 
 	$ bundle install
 
-Next you will need to copy the contents of config.example.yml into a new file named config.yml. To properly authenticate with the
+Next you will need to copy the contents of config.example.yml into a new file named config.yml. 
+
+```bash
+$ cp config.example.yml config.yml
+```
+
+To properly authenticate with the
 Canvas LMS system you are using this script with, you'll need to [generate an API access token](https://guides.instructure.com/m/4214/l/40399-how-do-i-obtain-an-api-access-token) for your user account and then insert that token into the 'config.yml' file as the 'admin_token'.
 
 ## Providing CSV Report
