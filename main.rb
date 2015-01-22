@@ -39,7 +39,7 @@ class NotificationSetter
     CSV.foreach('reports/' + @config['users_csv'], :headers => :first_row) do |user|
       @users << {'uid' => user['uid'], 'email' => user['email']}
     end
-    puts "Users Loaded from CSV for processing: #{@users.inspect}\n\n\n"
+    # puts "Users Loaded from CSV for processing: #{@users.inspect}\n\n\n"
     @users
   end
 
