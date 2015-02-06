@@ -31,7 +31,12 @@ class NotificationSetter
     announcement_created_by_you_request_path = "#{@host}/api/v1/users/self/communication_channels/email/#{email}/notification_preferences/announcement_created_by_you?as_user_id=sis_login_id:#{uid}"
     conversation_created_result = self.class.put(conversation_created_request_path, options)
     announcement_created_result = self.class.put(announcement_created_by_you_request_path, options)
-    puts "Updated UID: #{uid} - #{email}"
+
+    if (conversation_created_result.response.code == '200' && announcement_created_result.response.code == '200')
+      puts "Updated UID: #{uid} - #{email}"
+    else
+      puts "Failure to update preferences for UID: #{uid} - #{email}"
+    end
   end
 
   def load_user_ids
